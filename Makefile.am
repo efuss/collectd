@@ -1493,6 +1493,12 @@ netlink_la_LDFLAGS = $(PLUGIN_LDFLAGS)
 netlink_la_LIBADD = $(BUILD_WITH_LIBMNL_LIBS)
 endif
 
+if BUILD_PLUGIN_NETSTAT_UDP
+pkglib_LTLIBRARIES += netstat_udp.la
+netstat_udp_la_SOURCES = src/netstat_udp.c
+netstat_udp_la_LDFLAGS = $(PLUGIN_LDFLAGS)
+endif
+
 if BUILD_PLUGIN_NETWORK
 pkglib_LTLIBRARIES += network.la
 network_la_SOURCES = \
